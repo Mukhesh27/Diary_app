@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addTaskLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center"
+    android:background="?android:colorBackground"
+    tools:context=".AddTaskActivity">
+    <EditText
+        android:id="@+id/startTimeInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Start Time"
+        android:focusable="false"
+        android:clickable="true"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp" />
+    <EditText
+        android:id="@+id/endTimeInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter End Time (Optional)"
+        android:focusable="false"
+        android:clickable="true"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp" />
+    <EditText
+        android:id="@+id/taskInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Task / Activity"
+        android:inputType="textCapSentences"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp" />
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Task"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/torq"
+         />
+
+</LinearLayout>

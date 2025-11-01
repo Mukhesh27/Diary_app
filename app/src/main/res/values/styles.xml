@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TagChipStyle" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="chipBackgroundColor">@color/chip_bg_color</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="chipCornerRadius">18dp</item>
+        <item name="android:elevation">3dp</item>
+        <item name="rippleColor">@color/chip_ripple_color</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>

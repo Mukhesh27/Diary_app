@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollViewDiary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="?android:attr/colorBackground">
+    <LinearLayout
+        android:id="@+id/diaryItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="?android:attr/colorBackground">
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/item_background"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="8dp">
+            <TextView
+                android:id="@+id/diaryTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Page of 2025-10-29"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="?android:textColorPrimary" />
+            <ImageView
+                android:id="@+id/icForwardPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                android:contentDescription="Next Page"
+                android:tint="@color/white"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnAddTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+ Add Task"
+            android:backgroundTint="@color/torq"
+            android:textColor="@android:color/white"
+            android:layout_marginVertical="12dp" />
+        <LinearLayout
+            android:id="@+id/tagSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tags:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="?android:textColorPrimary"
+                android:paddingBottom="4dp" />
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleLine="false"
+                app:chipSpacing="6dp"
+                android:paddingBottom="8dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/editTag"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Add new tag"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:textColor="?android:textColorPrimary"
+                    android:textColorHint="?android:textColorHint"
+                    android:background="@drawable/item_background" />
+                <Button
+                    android:id="@+id/btnAddTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="@color/torq"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewDiary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:paddingTop="8dp" />
+        <TextView
+            android:id="@+id/txtNoEntries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No entries for this date."
+            android:textSize="16sp"
+            android:textColor="?android:textColorHint"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="16dp" />
+    </LinearLayout>
+</ScrollView>

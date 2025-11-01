@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#121212"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtTitle"
+            android:text="Task Title"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <ImageButton
+            android:id="@+id/btnSave"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/tick"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@android:color/white"
+            android:contentDescription="Save Task Details" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txtTime"
+        android:text="09:00 - 10:00"
+        android:textSize="16sp"
+        android:textColor="#B0B0B0"
+        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#404040" />
+    <EditText
+        android:id="@+id/edtDetails"
+        android:hint="Write additional details..."
+        android:textColor="@android:color/white"
+        android:textColorHint="#A0A0A0"
+        android:background="@android:color/transparent"
+        android:gravity="top|start"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical" />
+</LinearLayout>
