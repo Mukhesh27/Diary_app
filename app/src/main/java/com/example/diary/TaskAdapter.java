@@ -92,19 +92,25 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     }
     private String getDuration(String start, String end) {
         try {
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
+            SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
             Date startDate = sdf.parse(start);
             Date endDate = sdf.parse(end);
-            if (startDate == null || endDate == null) return "";
+            if (startDate == null || endDate == null)
+                return "";
             long diff = endDate.getTime() - startDate.getTime();
-            if (diff < 0) return "";
+            if (diff < 0) diff += 24 * 60 * 60 * 1000;
             long hours = diff / (1000 * 60 * 60);
             long minutes = (diff / (1000 * 60)) % 60;
-            if (hours > 0)
-                return hours + "h " + minutes + "m";
+            if (hours == 0 && minutes == 0)
+                return "0 min";
+            else if (hours == 0)
+                return minutes + " min";
+            else if (minutes == 0)
+                return hours + " hr";
             else
-                return minutes + "m";
+                return hours + " hr " + minutes + " min";
         } catch (Exception e) {
+            e.printStackTrace();
             return "";
         }
     }
