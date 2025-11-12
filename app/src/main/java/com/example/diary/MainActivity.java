@@ -13,9 +13,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
     TextView txtDate, txtNoLogs;
     RecyclerView recyclerView;
@@ -67,9 +72,17 @@ public class MainActivity extends AppCompatActivity {
         Collections.sort(todayTasks, new Comparator<TaskModel>() {
             @Override
             public int compare(TaskModel t1, TaskModel t2) {
-                return t1.getStartTime().compareTo(t2.getStartTime());
+                try {
+                    SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
+                    Date d1 = sdf.parse(t1.getStartTime());
+                    Date d2 = sdf.parse(t2.getStartTime());
+                    return d1.compareTo(d2);
+                } catch (Exception e) {
+                    return 0;
+                }
             }
         });
+
         taskAdapter = new TaskAdapter(this, todayTasks);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(taskAdapter);
@@ -103,9 +116,18 @@ public class MainActivity extends AppCompatActivity {
         Collections.sort(todayTasks, new Comparator<TaskModel>() {
             @Override
             public int compare(TaskModel t1, TaskModel t2) {
-                return t1.getStartTime().compareTo(t2.getStartTime());
+                try {
+                    SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
+                    Date d1 = sdf.parse(t1.getStartTime());
+                    Date d2 = sdf.parse(t2.getStartTime());
+                    return d1.compareTo(d2);
+                } catch (Exception e) {
+                    return 0;
+                }
             }
         });
+
+
         taskAdapter.notifyDataSetChanged();
         updateEmptyState();
     }
